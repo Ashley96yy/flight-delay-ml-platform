@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: flight-delay-ml-platform
+Version: 0.1.0
+Summary: An end-to-end flight delay prediction and ML engineering platform
+Requires-Python: <3.13,>=3.12
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: ruff>=0.11; extra == "dev"
