@@ -8,7 +8,10 @@ version = "0.1.0"
 description = "An end-to-end flight delay prediction and ML engineering platform"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "pandas>=2.2,<4",
+    "pyarrow>=18",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -21,6 +24,9 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "integration: tests requiring real external datasets",
+]
 
 [tool.ruff]
 target-version = "py312"
