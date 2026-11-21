@@ -1,0 +1,132 @@
+{
+  "feature_sets": {
+    "V3-A": [
+      "Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSElapsedTime",
+      "Distance",
+      "month",
+      "day_of_week",
+      "day_of_month",
+      "is_weekend",
+      "month_sin",
+      "month_cos",
+      "weekday_sin",
+      "weekday_cos",
+      "dep_time_sin",
+      "dep_time_cos",
+      "arr_time_sin",
+      "arr_time_cos",
+      "Route",
+      "Airline_Route",
+      "Departure_Hour",
+      "Arrival_Hour"
+    ],
+    "V4-A": [
+      "Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSElapsedTime",
+      "Distance",
+      "month",
+      "day_of_week",
+      "day_of_month",
+      "is_weekend",
+      "month_sin",
+      "month_cos",
+      "weekday_sin",
+      "weekday_cos",
+      "dep_time_sin",
+      "dep_time_cos",
+      "arr_time_sin",
+      "arr_time_cos",
+      "Route",
+      "Airline_Route",
+      "Departure_Hour",
+      "Arrival_Hour",
+      "origin_dep_delay_rate_ly",
+      "origin_outbound_arr_delay_rate_ly"
+    ],
+    "V4-B": [
+      "Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSElapsedTime",
+      "Distance",
+      "month",
+      "day_of_week",
+      "day_of_month",
+      "is_weekend",
+      "month_sin",
+      "month_cos",
+      "weekday_sin",
+      "weekday_cos",
+      "dep_time_sin",
+      "dep_time_cos",
+      "arr_time_sin",
+      "arr_time_cos",
+      "Route",
+      "Airline_Route",
+      "Departure_Hour",
+      "Arrival_Hour",
+      "origin_dep_delay_rate_ly",
+      "origin_outbound_arr_delay_rate_ly",
+      "airline_origin_dep_delay_rate_ly",
+      "airline_origin_arr_delay_rate_ly"
+    ]
+  },
+  "model_parameters": {
+    "Departure": {
+      "objective": "binary",
+      "n_estimators": 100,
+      "learning_rate": 0.06341572775495277,
+      "num_leaves": 32,
+      "max_depth": 5,
+      "min_child_samples": 300,
+      "subsample": 0.9,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.6794862726136689,
+      "reg_lambda": 4.84382786427857,
+      "random_state": 42,
+      "n_jobs": 4,
+      "verbosity": -1,
+      "reg_alpha": 8.862326508576256
+    },
+    "Arrival": {
+      "objective": "binary",
+      "n_estimators": 200,
+      "learning_rate": 0.01042444590365743,
+      "num_leaves": 24,
+      "max_depth": 6,
+      "min_child_samples": 400,
+      "subsample": 0.9,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.6215007028728169,
+      "reg_lambda": 0.0689527488022098,
+      "random_state": 42,
+      "n_jobs": 4,
+      "verbosity": -1,
+      "reg_alpha": 0.16934336501184952
+    }
+  },
+  "cv_folds": [
+    [
+      "2023-06",
+      "2023-07",
+      "2023-08"
+    ],
+    [
+      "2023-08",
+      "2023-09",
+      "2023-10"
+    ],
+    [
+      "2023-10",
+      "2023-11",
+      "2023-12"
+    ]
+  ],
+  "availability_policy": "research_proxy",
+  "imputation": "training_only_median"
+}

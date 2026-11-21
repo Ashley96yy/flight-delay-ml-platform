@@ -1,0 +1,13 @@
+{
+  "cached_cycles": 0,
+  "cached_hours": 3,
+  "estimated_all_grib_transfer_gib": 293.55,
+  "logical_weather_records": 1400166,
+  "missing_hours": 25926,
+  "pending_cycles": 4385,
+  "total_flights": 4609022,
+  "unique_cycles": 4385,
+  "unique_hourly_requests": 25929,
+  "unresolved_flights": 5,
+  "valid_flights": 4609017
+}

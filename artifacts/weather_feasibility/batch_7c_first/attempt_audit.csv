@@ -1,0 +1,3 @@
+backend,forecast_hour,status,seconds,error_code,error_type,error_message,forecast_run_at_utc
+zarr,,success,26.124002416967414,,,,2024-07-14 06:00:00+00:00
+zarr,,success,26.427975874976255,,,,2024-07-14 12:00:00+00:00

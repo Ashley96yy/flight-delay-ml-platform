@@ -1,0 +1,11 @@
+partition,feature,training_levels,rows,unknown_rows,unknown_levels,unknown_fraction
+validation_primary,Reporting_Airline,15,411997,0,0,0.0
+validation_all,Reporting_Airline,15,414099,0,0,0.0
+validation_primary,Origin,6,411997,0,0,0.0
+validation_all,Origin,6,414099,0,0,0.0
+validation_primary,Dest,244,411997,881,11,0.0021383650851826592
+validation_all,Dest,244,414099,887,11,0.002141999859936875
+validation_primary,Route,718,411997,2993,53,0.00726461600448547
+validation_all,Route,718,414099,3009,53,0.007266378329819681
+validation_primary,Airline_Route,1642,411997,11229,273,0.027255052828054575
+validation_all,Airline_Route,1642,414099,11280,273,0.027239862931328015

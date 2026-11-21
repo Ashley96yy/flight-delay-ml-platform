@@ -1,0 +1,9 @@
+{
+  "planned_cycles": 2,
+  "planned_hourly_requests": 3,
+  "cached_cycles": 0,
+  "succeeded_cycles": 2,
+  "failed_cycles": 0,
+  "cache_hits": 1,
+  "fetched_hours": 2
+}

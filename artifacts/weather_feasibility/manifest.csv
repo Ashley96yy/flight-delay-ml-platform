@@ -1,0 +1,11 @@
+artifact,rows,bytes
+feasibility_summary.csv,2,504
+temperature_benchmark.csv,2,396
+temperature_validation.csv,1,261
+multivariable_benchmark_2024.csv,9,1444
+multivariable_validation_2024.csv,9,1128
+historical_precision_audit.csv,45,12815
+historical_validation_2023.csv,9,1123
+historical_grib_acquisition.csv,6,308
+historical_zarr_acquisition.csv,54,4403
+backend_selection_policy.csv,10,841

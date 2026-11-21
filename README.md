@@ -48,13 +48,17 @@ python -m pytest tests/test_stage9b_phase1.py
 python -m ruff check src scripts tests
 ```
 
-An exact Stage 8 metric replay also requires the 24 monthly 2023–2024 BTS
-completed-flight Parquet partitions and manifests, the frozen
-`best_params.json`, and `baseline_generalization.py` plus `PROTOCOL.md` from the
-separately retained `flight_delay_v5_stage8_baseline_generalization.zip`
-evidence bundle. Use the command in the bundle's `STAGE8_REPORT.md`. A clean
-checkout contains the pipeline and model code. The replay inputs and Stage 8
-runner are retained separately.
+The Stage 8 reproduction materials are included in this repository:
+
+- `reproduction/stage8/baseline_generalization.py`: archived evaluation script.
+- `reproduction/stage8/PROTOCOL.md`: evaluation protocol.
+- `reproduction/STAGE8_REPORT.md`: original experiment report.
+- `reproduction/stage8/`: recorded metrics and summary.
+- `artifacts/hyperparameter_optimization/best_params.json`: frozen model parameters.
+
+An exact metric replay still requires the original 24 monthly 2023–2024
+BTS Parquet inputs, which are not committed to GitHub.
+The Stage 8 experiment was not rerun during this repository cleanup.
 
 ## Known limitations
 

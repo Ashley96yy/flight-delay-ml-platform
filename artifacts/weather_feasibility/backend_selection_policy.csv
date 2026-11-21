@@ -1,0 +1,11 @@
+,condition,action,reason
+0,validated_float32_array,use_zarr,Validated numerical equivalence
+1,validated_float16_array,use_zarr_with_precision_tracking,Validated storage-adjusted equivalence
+2,missing_zarr_metadata,fallback_to_grib,Cannot verify storage contract
+3,unsupported_array_layout,fallback_to_grib,Unsupported decoding configuration
+4,coordinate_mismatch,fallback_to_grib,Incorrect temporal or spatial alignment
+5,missing_or_corrupt_chunk,retry_then_fallback_to_grib,Acquisition failure
+6,unexpected_core_missing_value,fallback_to_grib,Core weather feature incomplete
+7,cloud_ceiling_fill_value,preserve_missing,Expected missingness for optional variable
+8,unexpected_numerical_discrepancy,fallback_to_grib_and_log,Failed reference reconciliation
+9,both_backends_fail,record_failure_without_imputation,Prevent silent data corruption

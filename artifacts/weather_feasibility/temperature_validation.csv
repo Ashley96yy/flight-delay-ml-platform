@@ -1,0 +1,2 @@
+,variable,storage_dtype,compared_records,raw_exact_matches,precision_adjusted_matches,mean_absolute_error_k,rmse_k,max_absolute_error_k,max_precision_adjusted_error_k,max_grid_separation_m
+0,temperature_2m,float32,36,36,36,0.0,0.0,0.0,0.0,6.292671295808787e-09

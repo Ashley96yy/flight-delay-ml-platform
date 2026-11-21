@@ -1,0 +1,4 @@
+year,forecast_run_at_utc,forecast_hour,cache_status,backend
+2023,2023-07-14 06:00:00+00:00,30,miss,
+2024,2024-07-14 06:00:00+00:00,30,hit,zarr
+2025,2025-07-14 06:00:00+00:00,30,miss,

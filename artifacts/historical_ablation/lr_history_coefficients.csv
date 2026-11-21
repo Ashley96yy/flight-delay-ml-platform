@@ -1,0 +1,9 @@
+Task,Feature,Coefficient,OddsRatio
+Departure,origin_dep_delay_rate_3m,-0.16373342392782209,0.848968306354365
+Departure,origin_outbound_arr_delay_rate_3m,0.20703448667745464,1.2300249905244172
+Departure,airline_origin_dep_delay_rate_3m,0.06619675423621355,1.0684369159759073
+Departure,airline_origin_arr_delay_rate_3m,0.04445006885067885,1.0454527747486102
+Arrival,origin_dep_delay_rate_3m,-0.03055429102088349,0.9699077733545975
+Arrival,origin_outbound_arr_delay_rate_3m,0.09178586161742494,1.09613007342635
+Arrival,airline_origin_dep_delay_rate_3m,0.0066898118986995145,1.006712238672727
+Arrival,airline_origin_arr_delay_rate_3m,0.07051598088982201,1.0730617177747737

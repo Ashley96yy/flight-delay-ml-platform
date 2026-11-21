@@ -1,0 +1,410 @@
+{
+  "protocol_sha256": "7d20915d3e49172ec38f84893632bb3673c928c31b47ed7d371a36b857e15af0",
+  "code_sha256": "74b8da5b934f8479217a85e5109dde08426e2ef7ccd27805aacc67ab56777dd6",
+  "params_sha256": "2f36b7b62d622d7458abd2bf54711ec24163df425b287b67ebb442c64be4b65c",
+  "feature_columns": [
+    "Reporting_Airline",
+    "Origin",
+    "Dest",
+    "CRSElapsedTime",
+    "Distance",
+    "month",
+    "day_of_week",
+    "day_of_month",
+    "is_weekend",
+    "month_sin",
+    "month_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "dep_time_sin",
+    "dep_time_cos",
+    "arr_time_sin",
+    "arr_time_cos",
+    "Route",
+    "Airline_Route",
+    "Departure_Hour",
+    "Arrival_Hour"
+  ],
+  "fit_year": 2023,
+  "validation_year": 2024,
+  "context_dates": [
+    "2024-01-15",
+    "2024-07-15"
+  ],
+  "versions": {
+    "lightgbm": "4.7.0",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1"
+  },
+  "inputs": [
+    {
+      "file": "bts_2023_01_completed.parquet",
+      "file_sha256": "f455256fdd76fc374116e36bdfd021bbb4bc30e18ad744899fe37095a7f54810",
+      "raw_rows": 112548,
+      "airport_rows": 112548,
+      "selected_rows": 24859,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 112548
+      }
+    },
+    {
+      "file": "bts_2023_02_completed.parquet",
+      "file_sha256": "a78953e8fabdf4ec8466ffbee00389cf3014abc1e90d335dd0f6fd024a945797",
+      "raw_rows": 105347,
+      "airport_rows": 105347,
+      "selected_rows": 23099,
+      "dates": 28,
+      "utc_conversion_status": {
+        "valid": 105347
+      }
+    },
+    {
+      "file": "bts_2023_03_completed.parquet",
+      "file_sha256": "d79b486f3fbe4cc177543d406462c1ff92f8512a5e140e4fb05a8f34efbfaf5d",
+      "raw_rows": 121638,
+      "airport_rows": 121638,
+      "selected_rows": 32772,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 121638
+      }
+    },
+    {
+      "file": "bts_2023_04_completed.parquet",
+      "file_sha256": "14dbf77ad32d3b09d69e22e2e6d2d81ce5124447ccfa9f056db099543c24f7b0",
+      "raw_rows": 118511,
+      "airport_rows": 118511,
+      "selected_rows": 34930,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 118511
+      }
+    },
+    {
+      "file": "bts_2023_05_completed.parquet",
+      "file_sha256": "18d006cbd73242e738b016420c81d19578b8b5d39e9d34115597d6ba84a9b33a",
+      "raw_rows": 126159,
+      "airport_rows": 126159,
+      "selected_rows": 37289,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 126159
+      }
+    },
+    {
+      "file": "bts_2023_06_completed.parquet",
+      "file_sha256": "0bc72ec306ea45f5072658b15e4cbed89ec199db5361bc556bd5040acea891dc",
+      "raw_rows": 125577,
+      "airport_rows": 125577,
+      "selected_rows": 37274,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 125577
+      }
+    },
+    {
+      "file": "bts_2023_07_completed.parquet",
+      "file_sha256": "72daa1f347b54fc35bbd6c33f0853bd8f9c83dab8130384b734224efe9eabb8b",
+      "raw_rows": 131242,
+      "airport_rows": 131242,
+      "selected_rows": 38803,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 131242
+      }
+    },
+    {
+      "file": "bts_2023_08_completed.parquet",
+      "file_sha256": "141842fa29b155f30fd5b72c56ed9e34caa3ef3300face4d7a22bcb2fb5b2203",
+      "raw_rows": 133212,
+      "airport_rows": 133212,
+      "selected_rows": 39399,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 133212
+      }
+    },
+    {
+      "file": "bts_2023_09_completed.parquet",
+      "file_sha256": "e0bb26825032d36c0588181f6f531a0838e0cb5b22dbadd55393eb215d61f96a",
+      "raw_rows": 126665,
+      "airport_rows": 126665,
+      "selected_rows": 37475,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 126665
+      }
+    },
+    {
+      "file": "bts_2023_10_completed.parquet",
+      "file_sha256": "ad4a20de8d12d249ade66218ac132c4fe74d8a65efd657b9419eb96ed0097e2b",
+      "raw_rows": 131143,
+      "airport_rows": 131143,
+      "selected_rows": 38636,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 131143
+      }
+    },
+    {
+      "file": "bts_2023_11_completed.parquet",
+      "file_sha256": "de027f145d225a4ab7f1cb046fd528de97410d6bab1d4112e5d26cbf21db6e3b",
+      "raw_rows": 122470,
+      "airport_rows": 122470,
+      "selected_rows": 27609,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 122468,
+        "dst_unresolvable": 2
+      }
+    },
+    {
+      "file": "bts_2023_12_completed.parquet",
+      "file_sha256": "b9fd4073b9e5035e97eb3ce56f8c301df16090b9c1480686dd27fced775fbc73",
+      "raw_rows": 123900,
+      "airport_rows": 123900,
+      "selected_rows": 26467,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 123900
+      }
+    },
+    {
+      "file": "bts_2024_01_completed.parquet",
+      "file_sha256": "a1851b3c02fb82bdb47e0526bcd29090b5ffe4c4fe632975078059c7cf3dd42d",
+      "raw_rows": 114141,
+      "airport_rows": 114141,
+      "selected_rows": 24025,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 114141
+      }
+    },
+    {
+      "file": "bts_2024_02_completed.parquet",
+      "file_sha256": "a2f53f591c7bed10dbac9a2fdd45a8152be15a0900162bbe139d69dbd4ee5505",
+      "raw_rows": 111804,
+      "airport_rows": 111804,
+      "selected_rows": 23482,
+      "dates": 29,
+      "utc_conversion_status": {
+        "valid": 111804
+      }
+    },
+    {
+      "file": "bts_2024_03_completed.parquet",
+      "file_sha256": "1d757e3a4f614e32e6bbdf897c7d29566d352a423117e7269021550f7fb75a24",
+      "raw_rows": 126498,
+      "airport_rows": 126498,
+      "selected_rows": 34365,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 126498
+      }
+    },
+    {
+      "file": "bts_2024_04_completed.parquet",
+      "file_sha256": "e4549027e8bda1ae51497b005d3431ef8fb6926dab0ec64541fe0fa6dd8d59de",
+      "raw_rows": 126752,
+      "airport_rows": 126752,
+      "selected_rows": 37479,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 126752
+      }
+    },
+    {
+      "file": "bts_2024_05_completed.parquet",
+      "file_sha256": "3e45f24ac622633d1bc9ac2d8ec0b4d5a8fb64968c8f256b9570112be43df98e",
+      "raw_rows": 132552,
+      "airport_rows": 132552,
+      "selected_rows": 39446,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 132552
+      }
+    },
+    {
+      "file": "bts_2024_06_completed.parquet",
+      "file_sha256": "b6edbfb38278d1431dbbd121ef113ed8ae2b65f57682fd0ed6aa1d4cfa91fb11",
+      "raw_rows": 133953,
+      "airport_rows": 133953,
+      "selected_rows": 39871,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 133953
+      }
+    },
+    {
+      "file": "bts_2024_07_completed.parquet",
+      "file_sha256": "e92d7787940565693ab6b47c187f8724926ffd94e58b1b4a9baa6f8fe6868f63",
+      "raw_rows": 136811,
+      "airport_rows": 136811,
+      "selected_rows": 40306,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 136811
+      }
+    },
+    {
+      "file": "bts_2024_08_completed.parquet",
+      "file_sha256": "7e4618e3d2a31dbc11ea4e5e5f4722fa812cc021625e0481ab1a2915183d2ff1",
+      "raw_rows": 137571,
+      "airport_rows": 137571,
+      "selected_rows": 40509,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 137571
+      }
+    },
+    {
+      "file": "bts_2024_09_completed.parquet",
+      "file_sha256": "89814bab368c931dbf00260658522a1319cae3cfeb1d59dc75cce677da3a447b",
+      "raw_rows": 132463,
+      "airport_rows": 132463,
+      "selected_rows": 38520,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 132463
+      }
+    },
+    {
+      "file": "bts_2024_10_completed.parquet",
+      "file_sha256": "993f938f48e480f5f6d6e3099966ac63df119cade065df122c77a4e4c9eb6afd",
+      "raw_rows": 138425,
+      "airport_rows": 138425,
+      "selected_rows": 40682,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 138425
+      }
+    },
+    {
+      "file": "bts_2024_11_completed.parquet",
+      "file_sha256": "b816ed0f4e94f99466d2ae38e0763f313af9e153c3f6a710e525e8958f0657db",
+      "raw_rows": 127514,
+      "airport_rows": 127514,
+      "selected_rows": 27697,
+      "dates": 30,
+      "utc_conversion_status": {
+        "valid": 127513,
+        "dst_unresolvable": 1
+      }
+    },
+    {
+      "file": "bts_2024_12_completed.parquet",
+      "file_sha256": "6cdc0038c567f5456a0f8d835294eaf86cbfd39c864502ba0ff1377e89deca1d",
+      "raw_rows": 130627,
+      "airport_rows": 130627,
+      "selected_rows": 27717,
+      "dates": 31,
+      "utc_conversion_status": {
+        "valid": 130627
+      }
+    }
+  ],
+  "lightgbm": [
+    {
+      "target": "DepDel15",
+      "requested_trees": 100,
+      "fitted_trees": 100,
+      "fitted_splits": 1777,
+      "split_count_by_feature": {
+        "Reporting_Airline": 78,
+        "Origin": 22,
+        "Dest": 83,
+        "CRSElapsedTime": 39,
+        "Distance": 2,
+        "month": 153,
+        "day_of_week": 57,
+        "day_of_month": 167,
+        "is_weekend": 0,
+        "month_sin": 84,
+        "month_cos": 103,
+        "weekday_sin": 70,
+        "weekday_cos": 9,
+        "dep_time_sin": 119,
+        "dep_time_cos": 52,
+        "arr_time_sin": 54,
+        "arr_time_cos": 34,
+        "Route": 267,
+        "Airline_Route": 377,
+        "Departure_Hour": 4,
+        "Arrival_Hour": 3
+      }
+    },
+    {
+      "target": "ArrDel15",
+      "requested_trees": 200,
+      "fitted_trees": 200,
+      "fitted_splits": 4600,
+      "split_count_by_feature": {
+        "Reporting_Airline": 161,
+        "Origin": 56,
+        "Dest": 142,
+        "CRSElapsedTime": 77,
+        "Distance": 15,
+        "month": 414,
+        "day_of_week": 190,
+        "day_of_month": 245,
+        "is_weekend": 11,
+        "month_sin": 194,
+        "month_cos": 211,
+        "weekday_sin": 167,
+        "weekday_cos": 38,
+        "dep_time_sin": 204,
+        "dep_time_cos": 167,
+        "arr_time_sin": 115,
+        "arr_time_cos": 66,
+        "Route": 893,
+        "Airline_Route": 1196,
+        "Departure_Hour": 35,
+        "Arrival_Hour": 3
+      }
+    }
+  ],
+  "day_block_inference": {
+    "DepDel15": {
+      "comparable_dates": 364,
+      "blocks": 53,
+      "ap_minus_prevalence": {
+        "daily_mean": 0.05945033083255489,
+        "positive_date_fraction": 0.9972527472527473,
+        "interval_95": [
+          0.05524465700771504,
+          0.06358965291010583
+        ]
+      },
+      "roc_auc_minus_half": {
+        "daily_mean": 0.11177950907910386,
+        "positive_date_fraction": 0.9972527472527473,
+        "interval_95": [
+          0.1073359759070968,
+          0.11613927342167589
+        ]
+      }
+    },
+    "ArrDel15": {
+      "comparable_dates": 364,
+      "blocks": 53,
+      "ap_minus_prevalence": {
+        "daily_mean": 0.059549723327707485,
+        "positive_date_fraction": 0.989010989010989,
+        "interval_95": [
+          0.055093271961536204,
+          0.06400273804181067
+        ]
+      },
+      "roc_auc_minus_half": {
+        "daily_mean": 0.10542971389153866,
+        "positive_date_fraction": 0.9807692307692307,
+        "interval_95": [
+          0.09931127549886519,
+          0.11125988414393873
+        ]
+      }
+    }
+  },
+  "weather_requests": 0
+}

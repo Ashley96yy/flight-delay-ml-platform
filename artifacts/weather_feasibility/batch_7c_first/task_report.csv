@@ -1,0 +1,3 @@
+forecast_run_at_utc,forecast_leads,status,cache_hits,fetched_hours,seconds,error_type,error_message
+2024-07-14 06:00:00+00:00,"F27,F30",succeeded,1,1,26.159070041030645,,
+2024-07-14 12:00:00+00:00,F27,succeeded,0,1,26.437345540965907,,

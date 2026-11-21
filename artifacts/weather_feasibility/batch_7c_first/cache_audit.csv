@@ -1,0 +1,4 @@
+forecast_hour,cache_status,backend,fallback_reason,forecast_run_at_utc
+27,fetched,zarr,,2024-07-14 06:00:00+00:00
+30,hit,zarr,,2024-07-14 06:00:00+00:00
+27,fetched,zarr,,2024-07-14 12:00:00+00:00
