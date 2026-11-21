@@ -1,0 +1,66 @@
+{
+  "mode": "dry_run",
+  "input_queries": 3,
+  "unique_http_requests": 2,
+  "http_attempts": 0,
+  "remaining_local_requests": 10,
+  "within_request_budget": true,
+  "estimated_provider_billing_units": null,
+  "observed_weather_coverage": null,
+  "model_metrics": null,
+  "ready_for_live": false,
+  "requests": [
+    {
+      "provider": "visual_crossing_historical_forecast",
+      "model": "gfs",
+      "request_key": "e8768ecb1d1dce8af78575b48becac083d34a13e7f617abc4d593688c65c1e7c",
+      "url": "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/api/v1/historicalforecast/33.6367,-84.4281/byrun/2023-07-13/2023-07-13?unitGroup=metric&contentType=json&include=hours&forecastdays=3&forecastDataset=gfs&elements=rundatetime%2Cdatetime%2CdatetimeEpoch%2Ctemp%2Cwindspeed%2Cwindgust%2Cprecip",
+      "run_at_utc": "2023-07-13T00:00:00+00:00",
+      "run_reference_kind": "daily_snapshot_basis_date_not_initialization",
+      "assumed_available_at_utc": null,
+      "paid": true,
+      "blockers": [
+        "paid_historical_forecast_addon_not_authorized",
+        "daily_snapshot_initialization_and_publication_time_unverified",
+        "model_specific_coverage_and_hourly_field_semantics_unverified"
+      ],
+      "evidence_url": "https://www.visualcrossing.com/resources/documentation/weather-api/historical-forecast-api/"
+    },
+    {
+      "provider": "visual_crossing_historical_forecast",
+      "model": "gfs",
+      "request_key": "3becbf70dfcd35210e2e725cee2a68590b20256292b766d2ea83e5baa576353c",
+      "url": "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/api/v1/historicalforecast/37.6213,-122.379/byrun/2024-07-13/2024-07-13?unitGroup=metric&contentType=json&include=hours&forecastdays=3&forecastDataset=gfs&elements=rundatetime%2Cdatetime%2CdatetimeEpoch%2Ctemp%2Cwindspeed%2Cwindgust%2Cprecip",
+      "run_at_utc": "2024-07-13T00:00:00+00:00",
+      "run_reference_kind": "daily_snapshot_basis_date_not_initialization",
+      "assumed_available_at_utc": null,
+      "paid": true,
+      "blockers": [
+        "paid_historical_forecast_addon_not_authorized",
+        "daily_snapshot_initialization_and_publication_time_unverified",
+        "model_specific_coverage_and_hourly_field_semantics_unverified"
+      ],
+      "evidence_url": "https://www.visualcrossing.com/resources/documentation/weather-api/historical-forecast-api/"
+    }
+  ],
+  "query_mapping": [
+    {
+      "input_position": 0,
+      "Origin": "ATL",
+      "scheduled_departure_utc": "2023-07-15T09:15:00Z",
+      "request_key": "e8768ecb1d1dce8af78575b48becac083d34a13e7f617abc4d593688c65c1e7c"
+    },
+    {
+      "input_position": 1,
+      "Origin": "ATL",
+      "scheduled_departure_utc": "2023-07-15T09:45:00Z",
+      "request_key": "e8768ecb1d1dce8af78575b48becac083d34a13e7f617abc4d593688c65c1e7c"
+    },
+    {
+      "input_position": 2,
+      "Origin": "SFO",
+      "scheduled_departure_utc": "2024-07-15T09:15:00Z",
+      "request_key": "3becbf70dfcd35210e2e725cee2a68590b20256292b766d2ea83e5baa576353c"
+    }
+  ]
+}

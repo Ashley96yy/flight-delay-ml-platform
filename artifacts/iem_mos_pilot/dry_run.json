@@ -1,0 +1,196 @@
+{
+  "mode": "dry_run",
+  "input_queries": 12,
+  "unique_http_requests": 12,
+  "http_attempts": 0,
+  "remaining_local_requests": 14,
+  "within_request_budget": true,
+  "estimated_provider_billing_units": null,
+  "observed_weather_coverage": null,
+  "model_metrics": null,
+  "ready_for_live": false,
+  "requests": [
+    {
+      "provider": "iem_mos",
+      "model": "GFS",
+      "request_key": "9d72e3967300e63281fc9eb87fceaf8c510391953ed97e3b5eda385f4e27f744",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=GFS&runtime=2023-01-15T00%3A00%3A00Z",
+      "run_at_utc": "2023-01-15T00:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "NBS",
+      "request_key": "50e156929eb53a995118b7aedb99dcb7d7d365639fd53857144ace4a5a5af0bb",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=NBS&runtime=2023-01-15T01%3A00%3A00Z",
+      "run_at_utc": "2023-01-15T01:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "GFS",
+      "request_key": "4cad60009708876f433a2d625cda57139ed96f9ec810db1e33fdeb52f0f86b6e",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=GFS&runtime=2023-07-15T00%3A00%3A00Z",
+      "run_at_utc": "2023-07-15T00:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "NBS",
+      "request_key": "4267feab925ccda132aed0193ad791cdfb4db3e0ac3eb3c38eed3151960fe88b",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=NBS&runtime=2023-07-15T01%3A00%3A00Z",
+      "run_at_utc": "2023-07-15T01:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "GFS",
+      "request_key": "311ccd308bb53366fecd5ccdca420a572fb9fa50d69535426d91d507f16f05ae",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=GFS&runtime=2024-01-15T00%3A00%3A00Z",
+      "run_at_utc": "2024-01-15T00:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "NBS",
+      "request_key": "190c9a15640643b541cc10425480f2223498c7cd5ef8a53227af3975639939dd",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=NBS&runtime=2024-01-15T01%3A00%3A00Z",
+      "run_at_utc": "2024-01-15T01:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "GFS",
+      "request_key": "c92df68d13bdf778cdbc73732bc5532831053b9b510e2f3aeba704dd8a3d640b",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=GFS&runtime=2024-07-15T00%3A00%3A00Z",
+      "run_at_utc": "2024-07-15T00:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "NBS",
+      "request_key": "844f0daeff328d415b9ed53ceb8ee071409d5b146ed4add2cc777d6460821f53",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=NBS&runtime=2024-07-15T01%3A00%3A00Z",
+      "run_at_utc": "2024-07-15T01:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "GFS",
+      "request_key": "5e95c186ccdffdde7e2f25029186e5934d812c6662c2c18976cf6d7c53c041b4",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=GFS&runtime=2025-01-15T00%3A00%3A00Z",
+      "run_at_utc": "2025-01-15T00:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "NBS",
+      "request_key": "e6cc77fd884b23767548d939383f8a0929c24946c42597b66989dedb23181ea6",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=NBS&runtime=2025-01-15T01%3A00%3A00Z",
+      "run_at_utc": "2025-01-15T01:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "GFS",
+      "request_key": "11073d26077518d981b0b04ddd3b1e20d018a122c96f7f0ecdb65550ef969705",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=GFS&runtime=2025-07-15T00%3A00%3A00Z",
+      "run_at_utc": "2025-07-15T00:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    },
+    {
+      "provider": "iem_mos",
+      "model": "NBS",
+      "request_key": "a539ebdaa9cda9ad1ef819f1812483b81dc652e395f20d3d3c88ab02cd523fb6",
+      "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDEN&station=KDFW&station=KLAX&station=KORD&station=KSFO&model=NBS&runtime=2025-07-15T01%3A00%3A00Z",
+      "run_at_utc": "2025-07-15T01:00:00+00:00",
+      "run_reference_kind": "model_cycle_not_publication_time",
+      "assumed_available_at_utc": null,
+      "paid": false,
+      "blockers": [
+        "availability_unverified",
+        "native_mos_contract_required"
+      ],
+      "evidence_url": "https://mesonet.agron.iastate.edu/mos/"
+    }
+  ],
+  "purpose": "raw_archive_research_only",
+  "model_ready": false
+}

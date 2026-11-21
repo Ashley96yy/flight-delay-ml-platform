@@ -40,6 +40,8 @@ def test_valid_bts_data(valid_bts_df):
     assert result["raw_records"] == 3
     assert result["six_airport_records"] == 2
     assert result["eligible_records"] == 2
+    assert result["completed_missing_label_records"] == 0
+    assert result["in_scope_completed_missing_label_records"] == 0
 
 
 def test_missing_required_column(valid_bts_df):
@@ -73,16 +75,35 @@ def test_label_inconsistency(valid_bts_df):
         validate_bts_data(df)
 
 
-def test_missing_label_in_completed_flight(valid_bts_df):
-    """Completed flights must have valid delay outcomes."""
+def test_out_of_scope_completed_missing_label_is_audited(valid_bts_df):
+    """Missing outcomes outside the model scope are audited, not rejected."""
 
     df = valid_bts_df.copy()
+    df.loc[2, "Cancelled"] = 0
 
-    df.loc[0, "ArrDelay"] = None
-    df.loc[0, "ArrDel15"] = None
+    report = validate_bts_data(df)
 
-    with pytest.raises(ValueError, match="Missing labels"):
-        validate_bts_data(df)
+    assert report["completed_missing_dep_label_records"] == 1
+    assert report["completed_missing_arr_label_records"] == 1
+    assert report["completed_missing_label_records"] == 1
+    assert report["in_scope_completed_missing_label_records"] == 0
+    assert report["eligible_records"] == 2
+
+
+def test_in_scope_completed_missing_label_is_audited(valid_bts_df):
+    """An in-scope completed flight with a missing outcome is excluded."""
+
+    df = valid_bts_df.copy()
+    df.loc[0, ["ArrDelay", "ArrDel15"]] = None
+
+    report = validate_bts_data(df)
+
+    assert report["completed_missing_dep_label_records"] == 0
+    assert report["completed_missing_arr_label_records"] == 1
+    assert report["completed_missing_label_records"] == 1
+    assert report["in_scope_completed_missing_arr_label_records"] == 1
+    assert report["in_scope_completed_missing_label_records"] == 1
+    assert report["eligible_records"] == 1
 
 
 def test_missing_baseline_feature(valid_bts_df):

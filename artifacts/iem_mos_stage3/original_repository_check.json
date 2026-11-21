@@ -1,0 +1,12 @@
+{
+  "original_head": "b53a8b13a23ec6d83cf53b1248bc9b18f28ae57f",
+  "original_branch": "main",
+  "original_stage1_present": false,
+  "original_stage2_present": false,
+  "existing_snapshot_files_compared": 86,
+  "differences": [],
+  "original_readme_bytes": 0,
+  "independent_branch": "feature/v5-api-iem-mos",
+  "stage2_bundle_sha256": "014f89d8a82578d70c4eabb248220977ff0575ff428d2a0902b3c8ff6c2cd2e4",
+  "original_repository_written": false
+}

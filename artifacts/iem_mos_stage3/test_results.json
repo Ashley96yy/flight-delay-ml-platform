@@ -1,0 +1,21 @@
+{
+  "original_last_confirmed": {
+    "passed": 487,
+    "skipped": 3
+  },
+  "stage2_reproduced": {
+    "passed": 608,
+    "skipped": 3
+  },
+  "stage3_full_suite": {
+    "passed": 647,
+    "skipped": 3
+  },
+  "stage3_new_tests": 39,
+  "ruff_scope": "src tests scripts",
+  "ruff_result": "passed",
+  "format_result": "passed for three new Python files",
+  "native_readline_workaround_used": true,
+  "original_repository_not_modified": true,
+  "model_training": false
+}

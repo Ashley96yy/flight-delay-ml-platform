@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=GFSATL&matches=KATL&fmt=text&sdate=2023-01-15T00%3A00Z&edate=2023-01-16T00%3A00Z&limit=1&order=asc",
+    "requested_at_utc": "2026-11-21T01:05:40.585076+00:00",
+    "purpose": "one original station bulletin per model to inspect timestamp semantics",
+    "attempt": 1,
+    "http_status": 200,
+    "bytes": 29,
+    "sha256": "51504a520e3ad4cdb174b74b3ceb0d926b41b38013a264324d80b6beae745bc2",
+    "application_status": "no_matching_product",
+    "application_message": "ERROR: Could not Find: GFSATL"
+  },
+  {
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/afos/retrieve.py?pil=NBSATL&matches=KATL&fmt=text&sdate=2023-01-15T00%3A00Z&edate=2023-01-16T00%3A00Z&limit=1&order=asc",
+    "requested_at_utc": "2026-11-21T01:05:47.077780+00:00",
+    "purpose": "one original station bulletin per model to inspect timestamp semantics",
+    "attempt": 2,
+    "http_status": 200,
+    "bytes": 29,
+    "sha256": "ba09b0b78c7391ead4c5d4cec4e78ea5f7fc8d983b076bc03f0bc3a545b3e95b",
+    "application_status": "no_matching_product",
+    "application_message": "ERROR: Could not Find: NBSATL"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "url": "https://mesonet.agron.iastate.edu/api/1/mos.json?station=KATL&station=KDFW&station=KDEN&station=KORD&station=KLAX&station=KSFO&model=GFS&runtime=2023-01-15T00%3A00%3A00Z",
+  "requested_at_utc": "2026-11-21T00:40:43.969990+00:00",
+  "attempt": 1,
+  "max_bytes": 2000000,
+  "http_status": 200,
+  "bytes": 123377,
+  "sha256": "a6293650e4f927950a9c8d46b9d0c918539df82d9e73a8109da1eda1493ba543",
+  "content_type": "application/json",
+  "seconds": 5.212
+}

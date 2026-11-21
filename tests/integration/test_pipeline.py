@@ -74,6 +74,8 @@ def test_pipeline_success(sample_bts_df, tmp_path):
     assert result["raw_records"] == 4
     assert result["six_airport_records"] == 3
     assert result["eligible_records"] == 2
+    assert result["completed_missing_label_records"] == 0
+    assert result["in_scope_completed_missing_label_records"] == 0
 
     output_path = Path(result["output_path"])
     assert output_path.is_file()
@@ -166,3 +168,42 @@ def test_invalid_label(sample_bts_df, tmp_path):
         )
 
     assert not list(processed_dir.glob("*.parquet"))
+
+
+@pytest.mark.parametrize(
+    "row_index,expected_in_scope_missing,expected_eligible",
+    [
+        (2, 0, 2),
+        (0, 1, 1),
+    ],
+)
+def test_completed_missing_label_audit_and_cohort(
+    sample_bts_df,
+    tmp_path,
+    row_index,
+    expected_in_scope_missing,
+    expected_eligible,
+):
+    """Completed missing labels are counted and excluded from modeling."""
+
+    df = sample_bts_df.copy()
+    df.loc[row_index, ["ArrDelay", "ArrDel15"]] = None
+
+    raw_dir = tmp_path / "raw"
+    processed_dir = tmp_path / "processed"
+    create_test_zip(df, raw_dir)
+
+    result = run_monthly_pipeline(
+        2023, 1, raw_dir, processed_dir
+    )
+
+    assert result["completed_missing_label_records"] == 1
+    assert (
+        result["in_scope_completed_missing_label_records"]
+        == expected_in_scope_missing
+    )
+    assert result["eligible_records"] == expected_eligible
+
+    cleaned = load_parquet(result["output_path"])
+    assert len(cleaned) == expected_eligible
+    assert cleaned[["DepDel15", "ArrDel15"]].notna().all().all()

@@ -8,9 +8,14 @@ version = "0.1.0"
 description = "An end-to-end flight delay prediction and ML engineering platform"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
+
 dependencies = [
     "pandas>=2.2,<4",
     "pyarrow>=18",
+    "numpy>=1.26,<3",
+    "scikit-learn>=1.4,<2",
+    "matplotlib>=3.8,<4",
+    "lightgbm>=4.6,<5",
 ]
 
 [project.optional-dependencies]

@@ -28,17 +28,15 @@ def prepare_modeling_cohort(df: pd.DataFrame) -> pd.DataFrame:
         & df["Diverted"].eq(0)
     )
 
-    # Step 4: Require valid labels for both tasks.
-    valid_labels_mask = (
-        df["DepDel15"].isin([0, 1])
-        & df["ArrDel15"].isin([0, 1])
-    )
+    # Step 4: Require observed labels for both tasks. Validation above has
+    # already rejected non-binary values and inconsistent delay/label pairs.
+    labels_present_mask = df[["DepDel15", "ArrDel15"]].notna().all(axis=1)
 
     # Step 5: Apply filtering without modifying raw data.
     eligible_mask = (
         airport_mask
         & completed_mask
-        & valid_labels_mask
+        & labels_present_mask
     )
 
     cleaned = df.loc[eligible_mask].copy()

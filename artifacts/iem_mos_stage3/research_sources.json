@@ -1,0 +1,27 @@
+{
+  "primary_code_sources": [
+    {
+      "url": "https://github.com/akrherz/pyIEM/blob/main/src/pyiem/nws/products/mos.py",
+      "file_blob_sha": "3c75207d17046480e71a46938e6358cb0bfc1ab0"
+    },
+    {
+      "url": "https://github.com/akrherz/iem-database/blob/main/init/mos.sql",
+      "file_blob_sha": "fcb93d2f96daa53aa0a84c2c58eef750026752e7"
+    },
+    {
+      "url": "https://github.com/akrherz/iem-database/blob/main/init/afos.sql",
+      "file_blob_sha": "d89f819900a36ea9be7121abe9613a54a1bae8f0"
+    },
+    {
+      "url": "https://github.com/akrherz/iem-web-services/blob/main/src/iemws/services/mos.py",
+      "file_blob_sha": "d69bfae970e9ebdd8f73ce08437771d33b94c843"
+    },
+    {
+      "url": "https://github.com/akrherz/iem/blob/main/pylib/iemweb/afos/retrieve.py",
+      "file_blob_sha": "27aa35819ae7dfee0a0cb6397ac740fe5acbeb24"
+    }
+  ],
+  "grade_A_historical_run_evidence_obtained": 0,
+  "verified_real_publication_times": 0,
+  "current_implementation_does_not_prove_historical_ingestion_version": true
+}

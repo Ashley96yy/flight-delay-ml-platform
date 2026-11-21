@@ -1,0 +1,7 @@
+strategy,model,flight_model_checks,temporal_matches,temporal_match_rate,max_past_valid_gap_hours,max_right_valid_gap_hours,max_bracket_span_hours,potential_field_values,potential_field_denominator,potential_field_coverage,materialized_field_values,strict_pit_passes,strict_pit_pass_rate,planned_interpolations,executed_interpolations,availability_status
+conservative,ALL,72,72,1.0,2.9833333333333334,,,344,504,0.6825396825396826,0,0,0.0,0,0,availability_unverified
+conservative,GFS,36,36,1.0,2.9833333333333334,,,148,216,0.6851851851851852,0,0,0.0,0,0,availability_unverified
+conservative,NBS,36,36,1.0,2.9833333333333334,,,196,288,0.6805555555555556,0,0,0.0,0,0,availability_unverified
+interpolation,ALL,72,72,1.0,2.9833333333333334,2.6666666666666665,3.0,344,504,0.6825396825396826,0,0,0.0,68,0,availability_unverified
+interpolation,GFS,36,36,1.0,2.9833333333333334,2.6666666666666665,3.0,148,216,0.6851851851851852,0,0,0.0,34,0,availability_unverified
+interpolation,NBS,36,36,1.0,2.9833333333333334,2.6666666666666665,3.0,196,288,0.6805555555555556,0,0,0.0,34,0,availability_unverified

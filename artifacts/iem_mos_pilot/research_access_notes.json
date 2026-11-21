@@ -1,0 +1,26 @@
+{
+  "documentation_access_errors": [
+    {
+      "url": "https://vlab.noaa.gov/web/mdl/mav-card",
+      "status": 403,
+      "workaround": "Official indexed MDL card and NOAA JetStream content read; preserved references, no data call fallback"
+    },
+    {
+      "url": "https://vlab.noaa.gov/web/mdl/nbm-textcard-v4.2",
+      "status": 403,
+      "workaround": "Official MDL indexed v4.0/v4.1/v4.2 card text used for field semantics"
+    },
+    {
+      "url": "https://mesonet.agron.iastate.edu/api/1/openapi.json",
+      "status": "unavailable_via_search_tool",
+      "workaround": "Reviewed provider-maintained mos.py implementation via GitHub connector"
+    }
+  ],
+  "archive_data_http_errors": [],
+  "published_rate_limit": "No numeric request quota established from reviewed IEM documentation; local cap/pacing are project policy, not IEM guarantees",
+  "code_source": {
+    "url": "https://github.com/akrherz/iem-web-services/blob/main/src/iemws/services/mos.py",
+    "blob_sha": "d69bfae970e9ebdd8f73ce08437771d33b94c843",
+    "repository_tree_sha": "3e6debf480d8f99c277a1fa6320bb32c21fd727b"
+  }
+}

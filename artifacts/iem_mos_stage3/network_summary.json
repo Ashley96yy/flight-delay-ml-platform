@@ -1,0 +1,9 @@
+{
+  "new_mos_json_requests": 0,
+  "extra_raw_bulletin_probe_requests": 2,
+  "probe_response_body_bytes": 58,
+  "http_errors": 0,
+  "application_no_product_responses": 2,
+  "historical_publication_receipts_obtained": 0,
+  "scope_note": "Counts exclude documentation, GitHub and file tools; no model weather acquired or retried. Two narrow nominal station-PIL probes do not prove global archive absence."
+}

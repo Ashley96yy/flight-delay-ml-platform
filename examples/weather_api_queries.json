@@ -1,0 +1,5 @@
+[
+  {"Origin": "ATL", "scheduled_departure_utc": "2023-07-15T09:15:00Z"},
+  {"Origin": "ATL", "scheduled_departure_utc": "2023-07-15T09:45:00Z"},
+  {"Origin": "SFO", "scheduled_departure_utc": "2024-07-15T09:15:00Z"}
+]

@@ -1,0 +1,173 @@
+{
+  "weather_network_requests": 0,
+  "weather_network_bytes": 0,
+  "availability_lag_hours": 3,
+  "cohort_rule": "seed-42 SHA256, upper bound 200 per airport/date, UTC hours 09\u201315",
+  "source_hashes": {
+    "bts_2023_01_completed.parquet": "f455256fdd76fc374116e36bdfd021bbb4bc30e18ad744899fe37095a7f54810",
+    "bts_2023_07_completed.parquet": "72daa1f347b54fc35bbd6c33f0853bd8f9c83dab8130384b734224efe9eabb8b",
+    "bts_2024_01_completed.parquet": "a1851b3c02fb82bdb47e0526bcd29090b5ffe4c4fe632975078059c7cf3dd42d",
+    "bts_2024_07_completed.parquet": "e92d7787940565693ab6b47c187f8724926ffd94e58b1b4a9baa6f8fe6868f63"
+  },
+  "params_sha256": "2f36b7b62d622d7458abd2bf54711ec24163df425b287b67ebb442c64be4b65c",
+  "cohort_sha256": "98f48cb241306341b1df1fdb0a86e483ac6815243ed594b003e82e775d6eaf83",
+  "cache_payload_hashes": {
+    "2024-07-14T06:00:00+00:00/F27": "eb87a43994494fa39fb99b5480ed43211f8a9bead6311493d1cb07f4797f6761",
+    "2024-07-14T06:00:00+00:00/F30": "ff6c8d64c28eb7b9804aceba577fdafbffd31c4f4b28675977fb3a3ccc5f6776",
+    "2024-07-14T12:00:00+00:00/F27": "f6a6e592941e63c32d9e16cd0b0162a070ab99a60207d93d4d05a92e3517b7d2"
+  },
+  "weather_plan": {
+    "flight_count": 3292,
+    "unique_hourly_requests": 27,
+    "unique_cycles": 8,
+    "cached_hours": 3,
+    "missing_hours": 24,
+    "cycles_fully_cached": 1,
+    "cycles_needing_acquisition": 7
+  },
+  "minimum_additional_hours": 5,
+  "minimum_plan_note": "Row and airport/date support only. Class counts and weather variance still require review.",
+  "grib_range_estimate": {
+    "historical_reference_bytes_per_hour_min": 11999199,
+    "historical_reference_bytes_per_hour_max": 12117651,
+    "min_additions_estimated_payload_bytes_low": 59995995,
+    "min_additions_estimated_payload_bytes_high": 60588255,
+    "all_missing_estimated_payload_bytes_low": 287980776,
+    "all_missing_estimated_payload_bytes_high": 290823624,
+    "range_gets_per_hour": 9,
+    "inventory_gets_per_hour": 1,
+    "min_additions_estimated_requests_no_retry": 50,
+    "all_missing_estimated_requests_no_retry": 240,
+    "reference_sha256": "374ad348c4f791387cffb666b35d0106af4dbb35f95e81a6010ec2507635d0c7"
+  },
+  "exploratory": {
+    "splits": {
+      "2023": {
+        "cohort": 1587,
+        "eligible": 0,
+        "eligible_fraction": 0.0,
+        "airport_date_strata": 0,
+        "source_forecast_hours": 0,
+        "airport_forecast_groups": 0,
+        "field_counts_all_cohort": {
+          "origin_temperature_c": 0,
+          "origin_wind_speed_10m": 0,
+          "origin_wind_gust": 0,
+          "origin_visibility_km": 0,
+          "origin_precipitation_1h": 0,
+          "origin_surface_cape": 0,
+          "origin_composite_reflectivity": 0
+        },
+        "label_counts": {
+          "DepDel15": {
+            "positive": 0,
+            "negative": 0
+          },
+          "ArrDel15": {
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      },
+      "2024": {
+        "cohort": 1705,
+        "eligible": 470,
+        "eligible_fraction": 0.2756598240469208,
+        "airport_date_strata": 6,
+        "source_forecast_hours": 3,
+        "airport_forecast_groups": 13,
+        "field_counts_all_cohort": {
+          "origin_temperature_c": 470,
+          "origin_wind_speed_10m": 470,
+          "origin_wind_gust": 470,
+          "origin_visibility_km": 470,
+          "origin_precipitation_1h": 470,
+          "origin_surface_cape": 470,
+          "origin_composite_reflectivity": 470
+        },
+        "label_counts": {
+          "DepDel15": {
+            "positive": 88,
+            "negative": 382
+          },
+          "ArrDel15": {
+            "positive": 79,
+            "negative": 391
+          }
+        }
+      }
+    },
+    "blockers": [
+      "2023: need 800 rows and all 12 airport/date strata",
+      "2023: need 10 positives and negatives per target",
+      "2024: need 100 rows and all 12 airport/date strata"
+    ]
+  },
+  "strict_weather": {
+    "splits": {
+      "2023": {
+        "cohort": 1587,
+        "eligible": 0,
+        "eligible_fraction": 0.0,
+        "airport_date_strata": 0,
+        "source_forecast_hours": 0,
+        "airport_forecast_groups": 0,
+        "field_counts_all_cohort": {
+          "origin_temperature_c": 0,
+          "origin_wind_speed_10m": 0,
+          "origin_wind_gust": 0,
+          "origin_visibility_km": 0,
+          "origin_precipitation_1h": 0,
+          "origin_surface_cape": 0,
+          "origin_composite_reflectivity": 0
+        },
+        "label_counts": {
+          "DepDel15": {
+            "positive": 0,
+            "negative": 0
+          },
+          "ArrDel15": {
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      },
+      "2024": {
+        "cohort": 1705,
+        "eligible": 0,
+        "eligible_fraction": 0.0,
+        "airport_date_strata": 0,
+        "source_forecast_hours": 0,
+        "airport_forecast_groups": 0,
+        "field_counts_all_cohort": {
+          "origin_temperature_c": 0,
+          "origin_wind_speed_10m": 0,
+          "origin_wind_gust": 0,
+          "origin_visibility_km": 0,
+          "origin_precipitation_1h": 0,
+          "origin_surface_cape": 0,
+          "origin_composite_reflectivity": 0
+        },
+        "label_counts": {
+          "DepDel15": {
+            "positive": 0,
+            "negative": 0
+          },
+          "ArrDel15": {
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      }
+    },
+    "blockers": [
+      "2023: need 800 rows and all 12 airport/date strata",
+      "2023: need 10 positives and negatives per target",
+      "2024: need 100 rows and all 12 airport/date strata",
+      "2024: need 10 positives and negatives per target"
+    ]
+  },
+  "strict_experiment": "blocked: source BTS schedule snapshots at T-24h are unverified",
+  "training_requested": false,
+  "training_executed": false
+}

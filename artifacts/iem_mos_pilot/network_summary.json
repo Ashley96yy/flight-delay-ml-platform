@@ -1,0 +1,11 @@
+{
+  "data_http_attempts": 13,
+  "unique_requested_run_model_urls": 12,
+  "exploratory_duplicate_requests": 1,
+  "successful_data_responses": 13,
+  "data_http_errors": 0,
+  "retries": 0,
+  "response_body_bytes": 1637532,
+  "unique_planned_response_body_bytes": 1514155,
+  "count_scope": "IEM MOS data HTTP attempts only; excludes documentation/GitHub/Library tool retrievals and HTTP headers/TLS overhead"
+}

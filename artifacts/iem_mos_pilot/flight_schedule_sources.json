@@ -1,0 +1,86 @@
+[
+  {
+    "file": "/Users/dingyuyao/Documents/Project/flight-delay-ml-platform/data/processed/bts_2023_01_completed.parquet",
+    "local_date": "2023-01-16",
+    "rows_selected": 6,
+    "columns_read": [
+      "FlightDate",
+      "Reporting_Airline",
+      "Flight_Number_Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSDepTime"
+    ],
+    "selected_schedule_sha256": "acf2aefb67a1a73737c0ace3593263905c1ba5a0f855464e759847e128d96412"
+  },
+  {
+    "file": "/Users/dingyuyao/Documents/Project/flight-delay-ml-platform/data/processed/bts_2023_07_completed.parquet",
+    "local_date": "2023-07-16",
+    "rows_selected": 6,
+    "columns_read": [
+      "FlightDate",
+      "Reporting_Airline",
+      "Flight_Number_Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSDepTime"
+    ],
+    "selected_schedule_sha256": "e6a7ca9fe22ffcdee4e3b4f182e964306fbddeaf97460402a1a730a04619278f"
+  },
+  {
+    "file": "/Users/dingyuyao/Documents/Project/flight-delay-ml-platform/data/processed/bts_2024_01_completed.parquet",
+    "local_date": "2024-01-16",
+    "rows_selected": 6,
+    "columns_read": [
+      "FlightDate",
+      "Reporting_Airline",
+      "Flight_Number_Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSDepTime"
+    ],
+    "selected_schedule_sha256": "a7bae4e6cb56cde5a7dfb46a99213374fab850adb72f41719316262ce5f8602f"
+  },
+  {
+    "file": "/Users/dingyuyao/Documents/Project/flight-delay-ml-platform/data/processed/bts_2024_07_completed.parquet",
+    "local_date": "2024-07-16",
+    "rows_selected": 6,
+    "columns_read": [
+      "FlightDate",
+      "Reporting_Airline",
+      "Flight_Number_Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSDepTime"
+    ],
+    "selected_schedule_sha256": "298c6cd32655f951584dbf84df54575da7c29301df51443ff9c3a169ce7d9212"
+  },
+  {
+    "file": "/Users/dingyuyao/Documents/Project/flight-delay-ml-platform/data/processed/bts_2025_01_completed.parquet",
+    "local_date": "2025-01-16",
+    "rows_selected": 6,
+    "columns_read": [
+      "FlightDate",
+      "Reporting_Airline",
+      "Flight_Number_Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSDepTime"
+    ],
+    "selected_schedule_sha256": "418daa27ee03ff11fc6b09e12297edd0f8d03b5bacad10026d0863a359996aa3"
+  },
+  {
+    "file": "/Users/dingyuyao/Documents/Project/flight-delay-ml-platform/data/processed/bts_2025_07_completed.parquet",
+    "local_date": "2025-07-16",
+    "rows_selected": 6,
+    "columns_read": [
+      "FlightDate",
+      "Reporting_Airline",
+      "Flight_Number_Reporting_Airline",
+      "Origin",
+      "Dest",
+      "CRSDepTime"
+    ],
+    "selected_schedule_sha256": "429a66872691354b7b38832f9638745e080d1d36c96dc982874794dcb81f7de8"
+  }
+]

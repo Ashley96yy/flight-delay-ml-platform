@@ -1,0 +1,19 @@
+{
+  "requested_run_model_station_cells": 72,
+  "present_cells": 72,
+  "parsed_records": 1584,
+  "availability_status": "availability_unverified",
+  "model_ready": false,
+  "verified_publication_records": 0,
+  "errors": [],
+  "coverage_scope": "six fixed run dates; not annual or flight coverage",
+  "schedule_sample_rows": 36,
+  "flight_model_checks": 72,
+  "exact_valid_time_matches": 4,
+  "ready_flight_model_checks": 0,
+  "flight_audit_status_counts": {
+    "missing_exact_valid_time": 68,
+    "availability_unverified": 4
+  },
+  "flight_labels_read": false
+}

@@ -93,3 +93,16 @@ def test_invalid_input_rejected(sample_flights):
 
     with pytest.raises(ValueError, match="Label inconsistency"):
         prepare_modeling_cohort(invalid)
+
+
+def test_in_scope_completed_missing_label_is_excluded(sample_flights):
+    """Missing labels are not filled and cannot enter the common cohort."""
+
+    df = sample_flights.copy()
+    df.loc[0, ["ArrDelay", "ArrDel15"]] = None
+
+    result = prepare_modeling_cohort(df)
+
+    assert len(result) == 1
+    assert result["Origin"].tolist() == ["SFO"]
+    assert result[["DepDel15", "ArrDel15"]].notna().all().all()

@@ -84,6 +84,11 @@ def run_monthly_pipeline(
     audit = validate_bts_data(raw_df)
 
     logger.info("Data validation passed")
+    logger.info(
+        "Completed flights missing either label: %s (in-scope: %s)",
+        f"{audit['completed_missing_label_records']:,}",
+        f"{audit['in_scope_completed_missing_label_records']:,}",
+    )
 
     # Step 5: Prepare the modeling cohort.
     cleaned_df = prepare_modeling_cohort(raw_df)
@@ -92,7 +97,7 @@ def run_monthly_pipeline(
         raise ValueError("Preprocessing row count mismatch.")
 
     logger.info(
-        "Eligible flights: %s",
+        "Modeling cohort flights: %s",
         f"{len(cleaned_df):,}",
     )
 
@@ -122,6 +127,12 @@ def run_monthly_pipeline(
         "raw_records": audit["raw_records"],
         "six_airport_records": audit["six_airport_records"],
         "eligible_records": audit["eligible_records"],
+        "completed_missing_label_records": audit[
+            "completed_missing_label_records"
+        ],
+        "in_scope_completed_missing_label_records": audit[
+            "in_scope_completed_missing_label_records"
+        ],
         "output_path": str(output_path),
     }
 

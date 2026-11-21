@@ -1,0 +1,7 @@
+strategy,year,checks,temporal_matches,strict_passes
+conservative,2023,24,24,0
+conservative,2024,24,24,0
+conservative,2025,24,24,0
+interpolation,2023,24,24,0
+interpolation,2024,24,24,0
+interpolation,2025,24,24,0

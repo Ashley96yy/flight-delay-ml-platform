@@ -1,0 +1,32 @@
+[
+  {
+    "year": 2023,
+    "forecast_run_at_utc": "2023-01-14T06:00:00+00:00",
+    "forecast_hour": 31,
+    "forecast_valid_at_utc": "2023-01-15T13:00:00+00:00"
+  },
+  {
+    "year": 2023,
+    "forecast_run_at_utc": "2023-01-14T06:00:00+00:00",
+    "forecast_hour": 32,
+    "forecast_valid_at_utc": "2023-01-15T14:00:00+00:00"
+  },
+  {
+    "year": 2023,
+    "forecast_run_at_utc": "2023-07-14T06:00:00+00:00",
+    "forecast_hour": 31,
+    "forecast_valid_at_utc": "2023-07-15T13:00:00+00:00"
+  },
+  {
+    "year": 2023,
+    "forecast_run_at_utc": "2023-07-14T12:00:00+00:00",
+    "forecast_hour": 27,
+    "forecast_valid_at_utc": "2023-07-15T15:00:00+00:00"
+  },
+  {
+    "year": 2024,
+    "forecast_run_at_utc": "2024-01-14T06:00:00+00:00",
+    "forecast_hour": 31,
+    "forecast_valid_at_utc": "2024-01-15T13:00:00+00:00"
+  }
+]

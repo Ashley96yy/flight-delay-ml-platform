@@ -1,0 +1,67 @@
+{
+  "mode": "dry_run",
+  "input_queries": 3,
+  "unique_http_requests": 2,
+  "http_attempts": 0,
+  "remaining_local_requests": 10,
+  "within_request_budget": true,
+  "estimated_provider_billing_units": null,
+  "observed_weather_coverage": null,
+  "model_metrics": null,
+  "ready_for_live": false,
+  "requests": [
+    {
+      "provider": "open_meteo_single_runs",
+      "model": "ecmwf_ifs",
+      "request_key": "7b087f915360271a49c422f52ae387e8b0973f8168b88b4e533a3181c27fd441",
+      "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=33.6367&longitude=-84.4281&models=ecmwf_ifs&run=2023-07-14T00%3A00&hourly=temperature_2m%2Cwind_speed_10m%2Cwind_gusts_10m%2Cprecipitation&forecast_hours=48&timezone=GMT&temperature_unit=celsius&wind_speed_unit=ms&precipitation_unit=mm",
+      "run_at_utc": "2023-07-14T00:00:00+00:00",
+      "run_reference_kind": "model_initialization_candidate",
+      "assumed_available_at_utc": "2023-07-14T06:00:00+00:00",
+      "paid": false,
+      "blockers": [
+        "historical_operational_run_provenance_unverified_hindcast_warning",
+        "historical_publication_time_unverified",
+        "hourly_variables_units_and_interpolation_unverified",
+        "outside_documented_ifs_archive"
+      ],
+      "evidence_url": "https://open-meteo.com/en/docs/single-runs-api"
+    },
+    {
+      "provider": "open_meteo_single_runs",
+      "model": "ecmwf_ifs",
+      "request_key": "b830dc6908391d45010799c68936e43bd0714ccb45f78f62b5b6e0c722c7eb58",
+      "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=37.6213&longitude=-122.379&models=ecmwf_ifs&run=2024-07-14T00%3A00&hourly=temperature_2m%2Cwind_speed_10m%2Cwind_gusts_10m%2Cprecipitation&forecast_hours=48&timezone=GMT&temperature_unit=celsius&wind_speed_unit=ms&precipitation_unit=mm",
+      "run_at_utc": "2024-07-14T00:00:00+00:00",
+      "run_reference_kind": "model_initialization_candidate",
+      "assumed_available_at_utc": "2024-07-14T06:00:00+00:00",
+      "paid": false,
+      "blockers": [
+        "historical_operational_run_provenance_unverified_hindcast_warning",
+        "historical_publication_time_unverified",
+        "hourly_variables_units_and_interpolation_unverified"
+      ],
+      "evidence_url": "https://open-meteo.com/en/docs/single-runs-api"
+    }
+  ],
+  "query_mapping": [
+    {
+      "input_position": 0,
+      "Origin": "ATL",
+      "scheduled_departure_utc": "2023-07-15T09:15:00Z",
+      "request_key": "7b087f915360271a49c422f52ae387e8b0973f8168b88b4e533a3181c27fd441"
+    },
+    {
+      "input_position": 1,
+      "Origin": "ATL",
+      "scheduled_departure_utc": "2023-07-15T09:45:00Z",
+      "request_key": "7b087f915360271a49c422f52ae387e8b0973f8168b88b4e533a3181c27fd441"
+    },
+    {
+      "input_position": 2,
+      "Origin": "SFO",
+      "scheduled_departure_utc": "2024-07-15T09:15:00Z",
+      "request_key": "b830dc6908391d45010799c68936e43bd0714ccb45f78f62b5b6e0c722c7eb58"
+    }
+  ]
+}

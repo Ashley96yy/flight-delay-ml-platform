@@ -74,15 +74,19 @@ def validate_bts_data(df: pd.DataFrame) -> dict:
         & df["Diverted"].eq(0)
     )
 
-    # 5. Completed flights require both labels.
+    # 5. Audit missing labels in completed flights. Real BTS data may contain
+    # completed records without one or both outcomes, so missing labels are
+    # counted rather than imputed or rejected.
     target_columns = list(LABEL_PAIRS)
+    missing_dep_label = completed & df["DepDel15"].isna()
+    missing_arr_label = completed & df["ArrDel15"].isna()
+    missing_any_label = missing_dep_label | missing_arr_label
 
-    if df.loc[completed, target_columns].isna().any().any():
-        raise ValueError("Missing labels in completed flights")
-
-    # 6. Validate required features in the modeling cohort.
+    # 6. Build the common modeling cohort. Both targets must be observed so
+    # departure and arrival models use the same source rows.
     in_scope = df["Origin"].isin(ORIGIN_AIRPORTS)
-    eligible = in_scope & completed
+    labels_present = df[target_columns].notna().all(axis=1)
+    eligible = in_scope & completed & labels_present
 
     if df.loc[eligible, list(BASELINE_FEATURES)].isna().any().any():
         raise ValueError("Missing baseline features in eligible flights")
@@ -103,6 +107,24 @@ def validate_bts_data(df: pd.DataFrame) -> dict:
         "raw_records": len(df),
         "six_airport_records": int(in_scope.sum()),
         "eligible_records": int(eligible.sum()),
+        "completed_missing_dep_label_records": int(
+            missing_dep_label.sum()
+        ),
+        "completed_missing_arr_label_records": int(
+            missing_arr_label.sum()
+        ),
+        "completed_missing_label_records": int(
+            missing_any_label.sum()
+        ),
+        "in_scope_completed_missing_dep_label_records": int(
+            (in_scope & missing_dep_label).sum()
+        ),
+        "in_scope_completed_missing_arr_label_records": int(
+            (in_scope & missing_arr_label).sum()
+        ),
+        "in_scope_completed_missing_label_records": int(
+            (in_scope & missing_any_label).sum()
+        ),
         "incomplete_candidate_key_records": incomplete_key_records,
         "duplicate_candidate_key_records": duplicate_key_records,
     }

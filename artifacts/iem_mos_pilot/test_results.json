@@ -1,0 +1,21 @@
+{
+  "original_baseline": {
+    "passed": 487,
+    "skipped": 3,
+    "source": "previous-stage actual baseline run"
+  },
+  "stage1_integrated_rerun": {
+    "passed": 543,
+    "skipped": 3
+  },
+  "stage2_full_suite": {
+    "passed": 608,
+    "skipped": 3
+  },
+  "stage2_added_tests": 65,
+  "ruff_lint": "passed: src tests scripts/probe_iem_mos.py",
+  "ruff_format": "passed: seven new Python files",
+  "legacy_python_files_modified": false,
+  "model_training_performed": false,
+  "api_weather_coverage_is_not_leakage_clearance": true
+}
