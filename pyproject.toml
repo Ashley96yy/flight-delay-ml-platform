@@ -39,3 +39,6 @@ line-length = 88
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.setuptools.package-data]
+"flight_delay.weather" = ["stage9a_hours.csv", "stage9a_protocol.json"]
