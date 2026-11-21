@@ -108,19 +108,38 @@ def test_reviewed_evidence_rejects_unverified_or_wrong_payload(tmp_path, changes
 def test_fit_uses_same_order_and_targets_for_both_arms(tmp_path, monkeypatch):
     import lightgbm
 
-    operations = []
+    fits = []
+    evaluations = []
+
+    class Booster:
+        def __init__(self, task):
+            self.task = task
+
+        def num_trees(self):
+            return 1
+
+        def feature_importance(self, kind):
+            assert kind == "split"
+            return np.array([int(self.task == "Departure")])
 
     class Classifier:
         def __init__(self, **params):
             self.task = params["label"]
+            self.n_estimators = 5
+            self.booster_ = Booster(self.task)
 
         def fit(self, features, target):
-            operations.append(
+            fits.append(
                 (self.task, tuple(features.index), tuple(target), len(features.columns))
             )
+            assert features["Dest"].notna().all()
 
         def predict_proba(self, features):
-            operations.append((self.task, tuple(features.index)))
+            evaluations.append((self.task, tuple(features.index)))
+            if tuple(features.index) == (1, 3):
+                assert features["Dest"].isna().sum() == 1
+            if self.task == "Arrival":
+                return np.array([[0.75, 0.25], [0.75, 0.25]])
             return np.array([[0.25, 0.75], [0.75, 0.25]])
 
     monkeypatch.setattr(lightgbm, "LGBMClassifier", Classifier)
@@ -130,7 +149,7 @@ def test_fit_uses_same_order_and_targets_for_both_arms(tmp_path, monkeypatch):
             _flights("2024-01-15").assign(year=2024),
         ],
         ignore_index=True,
-    ).assign(flight_id=list("abcd"))
+    ).assign(flight_id=list("abcd"), Dest=["SFO", "LAX", "DFW", "LAX"])
     joined = pd.DataFrame(
         {"flight_row_position": [1, 3, 0, 2]}
         | {column: [1.0, 2.0, 3.0, 4.0] for column in pov.MODEL_WEATHER_COLUMNS}
@@ -138,19 +157,30 @@ def test_fit_uses_same_order_and_targets_for_both_arms(tmp_path, monkeypatch):
     pov.fit_comparison(
         flights, joined, {task: {"label": task} for task in pov.TARGETS}, tmp_path
     )
-    for left, right in ((0, 4), (2, 6)):
-        assert operations[left][:-1] == operations[right][:-1]
-        assert operations[left][1] == (0, 2)
-        assert operations[left + 1] == operations[right + 1]
-        assert operations[left + 1][1] == (1, 3)
-        assert operations[right][-1] - operations[left][-1] == len(
-            pov.MODEL_WEATHER_COLUMNS
-        )
+    for left, right in ((0, 2), (1, 3)):
+        assert fits[left][:-1] == fits[right][:-1]
+        assert fits[left][1] == (0, 2)
+        assert evaluations[2 * left] == evaluations[2 * right]
+        assert evaluations[2 * left][1] == (1, 3)
+        assert evaluations[2 * left + 1][1] == (0, 2)
+        assert fits[right][-1] - fits[left][-1] == len(pov.MODEL_WEATHER_COLUMNS)
     predictions = pd.read_csv(tmp_path / "paired_validation_predictions.csv")
     assert predictions.flight_id.tolist() == ["d", "c"]
     metrics = pd.read_csv(tmp_path / "exploratory_metrics.csv")
     assert len(metrics) == 4
     assert metrics["mode"].eq("exploratory").all()
+    arrival = metrics.loc[metrics["target"].eq("ArrDel15")]
+    departure = metrics.loc[metrics["target"].eq("DepDel15")]
+    assert arrival["ranking_status"].eq("constant_scores").all()
+    assert arrival["validation_distinct_scores"].eq(1).all()
+    assert arrival["validation_scores_at_least_0_5"].eq(0).all()
+    assert arrival["average_precision"].equals(arrival["validation_positive_rate"])
+    assert arrival["fitted_splits"].eq(0).all()
+    assert arrival["fitted_trees"].eq(1).all()
+    assert arrival["requested_trees"].eq(5).all()
+    assert departure["ranking_status"].eq("nonconstant_scores").all()
+    assert departure["validation_distinct_scores"].eq(2).all()
+    assert departure["fitted_splits"].eq(1).all()
 
 
 @pytest.mark.parametrize("available, expected", [(None, 0), ("13:00", 2), ("13:01", 1)])

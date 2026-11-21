@@ -195,8 +195,11 @@ def fit_comparison(flights, joined, params, output):
     advanced = build_advanced_scheduled_features(selected)
     base = pd.concat([base, advanced[list(INTERACTION_FEATURE_COLUMNS)]], axis=1)
     for column in CATEGORIES:
-        levels = sorted(base.loc[train, column].astype("string").unique())
-        base[column] = base[column].astype("string").astype(pd.CategoricalDtype(levels))
+        values = base[column].astype("string")
+        levels = sorted(values.loc[train].dropna().unique())
+        base[column] = values.where(values.isin(levels)).astype(
+            pd.CategoricalDtype(levels)
+        )
     predictions = selected.loc[~train, ["flight_id", *TARGETS.values()]].copy()
     metrics, bins = [], []
     for arm, features in (
@@ -208,6 +211,10 @@ def fit_comparison(flights, joined, params, output):
             model.fit(features.loc[train], selected.loc[train, target])
             probabilities = model.predict_proba(features.loc[~train])[:, 1]
             y = selected.loc[~train, target]
+            train_probabilities = model.predict_proba(features.loc[train])[:, 1]
+            train_target = selected.loc[train, target]
+            score_count = np.unique(probabilities).size
+            booster = model.booster_
             precision, recall, _ = precision_recall_curve(y, probabilities)
             predictions[f"{arm}_{target}"] = probabilities
             metrics.append(
@@ -220,6 +227,19 @@ def fit_comparison(flights, joined, params, output):
                     "roc_auc": roc_auc_score(y, probabilities),
                     "f1_at_0_5": f1_score(y, probabilities >= 0.5, zero_division=0),
                     "brier": brier_score_loss(y, probabilities),
+                    "validation_positive_rate": y.mean(),
+                    "validation_distinct_scores": score_count,
+                    "validation_scores_at_least_0_5": int((probabilities >= 0.5).sum()),
+                    "ranking_status": (
+                        "constant_scores" if score_count == 1 else "nonconstant_scores"
+                    ),
+                    "requested_trees": model.n_estimators,
+                    "fitted_trees": booster.num_trees(),
+                    "fitted_splits": int(booster.feature_importance("split").sum()),
+                    "train_average_precision": average_precision_score(
+                        train_target, train_probabilities
+                    ),
+                    "train_roc_auc": roc_auc_score(train_target, train_probabilities),
                 }
             )
             observed, predicted = calibration_curve(y, probabilities, n_bins=5)
